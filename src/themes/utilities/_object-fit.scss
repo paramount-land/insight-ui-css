@@ -1,9 +1,0 @@
-@layer utilities {
-  $object-fits: ('contain', 'cover', 'fill', 'none', 'scale-down');
-
-  @each $value in $object-fits {
-    .object-#{$value} {
-      object-fit: $value;
-    }
-  }
-}

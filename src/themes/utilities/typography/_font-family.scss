@@ -1,9 +1,0 @@
-@layer utilities {
-  $font-families: ('heading', 'body', 'sans', 'mono');
-
-  @each $name in $font-families {
-    .font-#{$name} {
-      font-family: var(--i-font-#{$name});
-    }
-  }
-}

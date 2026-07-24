@@ -1,9 +1,0 @@
-@layer utilities {
-  $trackings: ('tighter', 'tight', 'normal', 'wide', 'wider', 'widest');
-
-  @each $name in $trackings {
-    .tracking-#{$name} {
-      letter-spacing: var(--i-tracking-#{$name});
-    }
-  }
-}

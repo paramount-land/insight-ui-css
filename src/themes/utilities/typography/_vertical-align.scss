@@ -1,9 +1,0 @@
-@layer utilities {
-  $vertical-aligns: ('baseline', 'top', 'middle', 'bottom', 'text-top', 'text-bottom');
-
-  @each $value in $vertical-aligns {
-    .align-#{$value} {
-      vertical-align: $value;
-    }
-  }
-}
