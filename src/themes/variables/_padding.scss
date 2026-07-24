@@ -1,0 +1,23 @@
+@layer themes {
+  $paddings: (
+    '3xs': 2px,
+    '2xs': 4px,
+    'xs': 8px,
+    'sm': 10px,
+    'md': 12px,
+    'lg': 16px,
+    'xl': 20px,
+    '2xl': 24px,
+    '3xl': 32px
+  );
+
+  :root {
+    @for $i from 0 through 8 {
+      --i-padding-#{$i}: #{$i * 4}px;
+    }
+
+    @each $name, $value in $paddings {
+      --i-padding-#{$name}: #{$value};
+    }
+  }
+}

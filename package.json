@@ -1,0 +1,22 @@
+{
+  "name": "insight-ui-css",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "npm@12.0.0",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "format": "prettier --write \"src/**/*.{ts,html,scss,css}\"",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "highlight.js": "^11.11.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.5",
+    "sass-embedded": "^1.100.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.4"
+  }
+}

@@ -1,0 +1,55 @@
+@layer components {
+  $confirm-variants: (
+    'information': var(--i-color-primary),
+    'success': var(--i-color-success),
+    'warning': var(--i-color-warning),
+    'danger': var(--i-color-danger)
+  );
+
+  i-confirm {
+    .i-confirm {
+      --mat-dialog-content-padding: var(--i-spacing-xl) var(--i-spacing-md) var(--i-spacing-sm);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: var(--i-dialog-max-width);
+
+      .i-dialog-content {
+        ic,
+        i-icon {
+          margin-top: var(--i-spacing-md);
+          margin-bottom: var(--i-spacing-md);
+        }
+
+        h4 {
+          font-weight: 600;
+          text-align: center;
+        }
+
+        p {
+          color: var(--i-text-subtle-color);
+          text-align: center;
+        }
+      }
+
+      @each $variant, $color in $confirm-variants {
+        &.i-confirm-#{$variant} {
+          .i-dialog-content {
+            i,
+            h4 {
+              color: #{$color};
+            }
+          }
+        }
+      }
+
+      .i-dialog-actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

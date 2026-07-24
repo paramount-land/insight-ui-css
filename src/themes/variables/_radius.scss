@@ -1,0 +1,25 @@
+@layer themes {
+  $radius-sizes: (
+    'none': 0,
+    '3xs': 4px,
+    '2xs': 5px,
+    'xs': 6px,
+    'sm': 7px,
+    'md': 8px,
+    'lg': 10px,
+    'xl': 16px,
+    '2xl': 24px,
+    '3xl': 32px,
+    'full': 9999px
+  );
+
+  :root {
+    @for $i from 0 through 8 {
+      --i-radius-#{$i}: #{$i * 4}px;
+    }
+
+    @each $name, $value in $radius-sizes {
+      --i-radius-#{$name}: #{$value};
+    }
+  }
+}

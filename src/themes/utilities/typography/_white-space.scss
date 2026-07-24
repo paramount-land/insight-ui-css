@@ -1,0 +1,9 @@
+@layer utilities {
+  $whitespaces: ('normal', 'nowrap', 'pre', 'pre-line', 'pre-wrap');
+
+  @each $value in $whitespaces {
+    .whitespace-#{$value} {
+      white-space: $value;
+    }
+  }
+}

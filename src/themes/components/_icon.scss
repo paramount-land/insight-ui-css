@@ -1,0 +1,24 @@
+@layer components {
+  $icon-sizes: ('3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl');
+
+  ic,
+  i-icon,
+  .i-icon {
+    --i-background-color: initial;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      --i-background-color: initial;
+    }
+
+    @each $size in $icon-sizes {
+      .i-icon-#{$size} {
+        font-size: var(--i-icon-#{$size});
+      }
+    }
+  }
+}

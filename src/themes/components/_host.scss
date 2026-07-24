@@ -1,0 +1,25 @@
+@forward 'host/content';
+@forward 'host/menu';
+@forward 'host/sidebar';
+
+@layer themes {
+  :root {
+    --i-header-height: 50px;
+  }
+}
+
+@layer components {
+  i-host,
+  ih-root,
+  app-root,
+  ir-standalone {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    background-color: var(--i-color-gray-50);
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+}

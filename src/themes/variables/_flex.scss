@@ -1,0 +1,9 @@
+@layer themes {
+  :root {
+    --i-flex-direction: row;
+    --i-flex-wrap: nowrap;
+    --i-align-content: stretch;
+    --i-justify-content: flex-start;
+    --i-align-items: stretch;
+  }
+}

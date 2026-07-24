@@ -1,0 +1,8 @@
+@layer themes {
+  :root {
+    --i-scroll-overflow-x: hidden;
+    --i-scroll-overflow-y: hidden;
+    --i-scroll-thumb-radius: var(--i-radius-full);
+    --i-scroll-thumb-color: var(--i-color-blue);
+  }
+}

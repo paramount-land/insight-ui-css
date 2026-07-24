@@ -1,0 +1,15 @@
+@layer utilities {
+  $text-sizes: ('3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl');
+
+  @each $size in $text-sizes {
+    .text-#{$size} {
+      font-size: var(--i-text-#{$size});
+    }
+  }
+
+  @for $i from 0 through 8 {
+    .text-#{$i} {
+      font-size: var(--i-text-#{$i});
+    }
+  }
+}

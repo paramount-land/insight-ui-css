@@ -1,0 +1,61 @@
+@layer utilities {
+  $bg-states: (
+    'inherit': inherit,
+    'transparent': transparent,
+    'info': var(--i-color-blue-100),
+    'warning': var(--i-color-amber-100),
+    'danger': var(--i-color-red-50),
+    'success': var(--i-color-green-100),
+    'subtle': var(--i-color-subtle),
+    'black': var(--i-color-black),
+    'white': var(--i-color-white),
+    'primary': var(--i-color-blue-500)
+  );
+
+  @each $name, $value in $bg-states {
+    .bg-#{$name} {
+      --i-background-color: #{$value};
+    }
+  }
+}
+
+@layer utilities {
+  $bg-colors: (
+    'amber',
+    'blue',
+    'brown',
+    'cyan',
+    'emerald',
+    'fuchsia',
+    'gray',
+    'green',
+    'indigo',
+    'lime',
+    'orange',
+    'pink',
+    'purple',
+    'red',
+    'rose',
+    'sky',
+    'slate',
+    'stone',
+    'teal',
+    'violet',
+    'yellow',
+    'zinc'
+  );
+
+  $bg-shades: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950);
+
+  @each $color in $bg-colors {
+    .bg-#{$color} {
+      --i-background-color: var(--i-color-#{$color});
+    }
+
+    @each $shade in $bg-shades {
+      .bg-#{$color}-#{$shade} {
+        --i-background-color: var(--i-color-#{$color}-#{$shade});
+      }
+    }
+  }
+}

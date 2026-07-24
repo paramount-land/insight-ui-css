@@ -1,0 +1,140 @@
+@use 'sass:list';
+
+@layer utilities {
+  $border-sides: (
+    't': 'top',
+    'b': 'bottom',
+    'l': 'left',
+    'r': 'right'
+  );
+
+  $border-widths: ('05' 'xs': 0.5px, '1' 'sm': 1px, '2' 'md': 2px, '3' 'lg': 3px, '4' 'xl': 4px, '5' '2xl': 5px);
+
+  $border-semantic-colors: (
+    'subtle': var(--i-border-subtle-color),
+    'black': var(--i-border-black-color),
+    'white': var(--i-border-white-color),
+    'info': var(--i-border-info-color),
+    'warning': var(--i-border-warning-color),
+    'danger': var(--i-border-danger-color),
+    'success': var(--i-border-success-color)
+  );
+
+  $border-colors: (
+    'amber',
+    'blue',
+    'brown',
+    'cyan',
+    'emerald',
+    'fuchsia',
+    'gray',
+    'green',
+    'indigo',
+    'lime',
+    'orange',
+    'pink',
+    'purple',
+    'red',
+    'rose',
+    'sky',
+    'slate',
+    'stone',
+    'teal',
+    'violet',
+    'yellow',
+    'zinc'
+  );
+
+  $border-shades: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950);
+
+  .border-none {
+    border: none;
+  }
+
+  .border {
+    border-width: var(--i-border-width);
+    border-style: var(--i-border-style);
+    border-color: var(--i-border-color);
+  }
+
+  @each $key, $side in $border-sides {
+    .border-#{$key} {
+      border-#{$side}-width: var(--i-border-width);
+      border-#{$side}-style: var(--i-border-style);
+      border-#{$side}-color: var(--i-border-color);
+    }
+
+    .border-#{$key}-none {
+      border-#{$side}: none;
+    }
+  }
+
+  .border-x {
+    border-right-width: var(--i-border-width);
+    border-left-width: var(--i-border-width);
+    border-right-style: var(--i-border-style);
+    border-left-style: var(--i-border-style);
+    border-right-color: var(--i-border-color);
+    border-left-color: var(--i-border-color);
+  }
+
+  .border-y {
+    border-top-width: var(--i-border-width);
+    border-bottom-width: var(--i-border-width);
+    border-top-style: var(--i-border-style);
+    border-bottom-style: var(--i-border-style);
+    border-top-color: var(--i-border-color);
+    border-bottom-color: var(--i-border-color);
+  }
+
+  .border-x-none {
+    border-right: none;
+    border-left: none;
+  }
+  .border-y-none {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .border-solid {
+    --i-border-style: solid;
+  }
+  .border-dotted {
+    --i-border-style: dotted;
+  }
+  .border-dashed {
+    --i-border-style: dashed;
+  }
+
+  @each $aliases, $value in $border-widths {
+    .border-#{list.nth($aliases, 1)},
+    .border-#{list.nth($aliases, 2)} {
+      --i-border-width: #{$value};
+    }
+
+    @each $key, $side in $border-sides {
+      .border-#{$key}-#{list.nth($aliases, 1)},
+      .border-#{$key}-#{list.nth($aliases, 2)} {
+        border-#{$side}-width: #{$value};
+      }
+    }
+  }
+
+  @each $name, $value in $border-semantic-colors {
+    .border-#{$name} {
+      --i-border-color: #{$value};
+    }
+  }
+
+  @each $color in $border-colors {
+    .border-#{$color} {
+      --i-border-color: var(--i-color-#{$color});
+    }
+
+    @each $shade in $border-shades {
+      .border-#{$color}-#{$shade} {
+        --i-border-color: var(--i-color-#{$color}-#{$shade});
+      }
+    }
+  }
+}

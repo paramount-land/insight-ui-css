@@ -1,0 +1,32 @@
+@layer utilities {
+  $displays: (
+    'inline',
+    'block',
+    'inline-block',
+    'flow-root',
+    'grid',
+    'inline-grid',
+    'contents',
+    'table',
+    'inline-table',
+    'table-caption',
+    'table-cell',
+    'table-column',
+    'table-column-group',
+    'table-footer-group',
+    'table-header-group',
+    'table-row-group',
+    'table-row',
+    'list-item'
+  );
+
+  @each $value in $displays {
+    .#{$value} {
+      display: $value;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+}

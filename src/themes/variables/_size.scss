@@ -1,0 +1,23 @@
+@layer themes {
+  $sizes: (
+    '3xs': 8px,
+    '2xs': 16px,
+    'xs': 24px,
+    'sm': 30px,
+    'md': 34px,
+    'lg': 40px,
+    'xl': 48px,
+    '2xl': 56px,
+    '3xl': 64px
+  );
+
+  :root {
+    @for $i from 0 through 9999 {
+      --i-size-#{$i}: #{$i}px;
+    }
+
+    @each $name, $value in $sizes {
+      --i-size-#{$name}: #{$value};
+    }
+  }
+}

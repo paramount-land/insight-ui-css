@@ -1,0 +1,18 @@
+@layer utilities {
+  $text-semantic: (
+    'primary': var(--i-text-primary-color),
+    'subtle': var(--i-text-subtle-color),
+    'info': var(--i-text-info-color),
+    'warning': var(--i-text-warning-color),
+    'danger': var(--i-text-danger-color),
+    'success': var(--i-text-success-color),
+    'black': var(--i-color-black),
+    'white': var(--i-color-white)
+  );
+
+  @each $name, $value in $text-semantic {
+    .text-#{$name} {
+      color: #{$value};
+    }
+  }
+}

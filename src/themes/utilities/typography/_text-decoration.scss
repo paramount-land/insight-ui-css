@@ -1,0 +1,29 @@
+@layer utilities {
+  $text-decoration-lines: (
+    'underline': underline,
+    'line-through': line-through,
+    'no-underline': none
+  );
+
+  $text-decoration-styles: ('solid', 'dashed', 'dotted', 'double', 'wavy');
+
+  $underline-offsets: (0, 1, 2, 3, 4, 5, 6, 7, 8);
+
+  @each $name, $value in $text-decoration-lines {
+    .#{$name} {
+      text-decoration-line: $value;
+    }
+  }
+
+  @each $style in $text-decoration-styles {
+    .decoration-#{$style} {
+      text-decoration-style: $style;
+    }
+  }
+
+  @each $offset in $underline-offsets {
+    .underline-offset-#{$offset} {
+      text-underline-offset: #{$offset}px;
+    }
+  }
+}
